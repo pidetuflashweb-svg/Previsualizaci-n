@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlashWeb | Previsualización</title>
+
+  <style>
+    :root {
+      --bg: #020617;
+      --primary: #38bdf8;
+      --secondary: #22d3ee;
+      --premium: #facc15;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0ea5e9 0%, var(--bg) 70%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: #ffffff;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+    }
+
+    header p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      padding: 30px 25px;
+      text-align: center;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 10px 0 15px;
+    }
+
+    .basic .price { color: var(--primary); }
+    .premium .price { color: var(--premium); }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-basic {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: #020617;
+    }
+
+    .btn-premium {
+      background: linear-gradient(90deg, var(--premium), #fde047);
+      color: #020617;
+    }
+
+    .btn:hover { opacity: 0.85; }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      body {
+        padding: 15px;
+      }
+
+      .card {
+        padding: 25px 18px;
+      }
+
+      .price {
+        font-size: 1.8rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <header>
+      <h1>FlashWeb</h1>
+      <p>Previsualiza tu web antes de publicarla y compara versiones.</p>
+    </header>
+
+    <main class="container">
+
+      <div class="card basic">
+        <h2>Página Básica</h2>
+        <div class="price">35€</div>
+        <p>Diseño limpio y rápido. Ideal para proyectos simples o presencia online básica.</p>
+        <a href="basica/index.html" target="_blank" class="btn btn-basic">Ver demo</a>
+      </div>
+
+      <div class="card premium">
+        <h2>Página Premium</h2>
+        <div class="price">100€</div>
+        <p>Diseño avanzado con mejor estética y mayor impacto visual para clientes.</p>
+        <a href="premium/index.html" target="_blank" class="btn btn-premium">Ver demo</a>
+      </div>
+
+    </main>
+
+    <footer>
+      © 2026 FlashWeb · Previsualización de proyectos
+    </footer>
+
+  </div>
+
+</body>
+</html>
